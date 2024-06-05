@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FashionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/fashion/upload', [FashionController::class, 'showUploadForm'])->name('fashion.upload');
+    Route::post('/fashion/upload', [FashionController::class, 'upload'])->name('fashion.upload.post');
+    Route::get('/fashion/results', [FashionController::class, 'showResults'])->name('fashion.results');
+    Route::post('/fashion/describe', [FashionController::class, 'describeImage'])->name('fashion.describe');
+        
 });

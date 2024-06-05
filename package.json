@@ -1,18 +1,21 @@
 {
-  "private": true,
+  "name": "fashiomatic",
+  "version": "1.0.0",
+  "description": "A fashion recommendation AI project",
+  "main": "index.js",
   "scripts": {
-    "dev": "npm run development",
-    "development": "mix",
-    "watch": "mix watch",
-    "watch-poll": "mix watch -- --watch-options-poll=1000",
-    "hot": "mix watch --hot",
-    "production": "mix --production"
+    "dev": "cd src && mix",
+    "development": "cd src && mix",
+    "watch": "cd src && mix watch",
+    "hot": "cd src && mix watch --hot",
+    "prod": "cd src && mix --production",
+    "production": "cd src && mix --production"
   },
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
-    "axios": "^0.21",
-    "laravel-mix": "^6.0.6",
-    "lodash": "^4.17.21",
-    "postcss": "^8.1.14",
-    "tailwindcss": "^2.2.19"
+    "laravel-mix": "^6.0.0",
+    "tailwindcss": "^2.0.0"
   }
 }
+
